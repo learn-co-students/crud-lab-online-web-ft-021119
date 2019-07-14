@@ -2,6 +2,15 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-export default function manageRestaurants(state, action) {
-
+export default function manageRestaurants(state = {restaurants: []}, action) {
+   switch(action.type) {
+      case "ADD_RESTAURANT":
+         // console.log("action: ", action)
+         // console.log("state: ", state)
+         const newRestaurant = {text: action.data.text, id: cuid()}
+         let newState = {restaurants: [...state.restaurants, newRestaurant]}
+         // console.log(newRestaurant)
+         // console.log(newState)
+         return newState
+   }
 }
