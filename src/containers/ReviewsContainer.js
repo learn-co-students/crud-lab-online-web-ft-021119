@@ -5,11 +5,19 @@ import Reviews from '../components/reviews/Reviews'
 
 class ReviewsContainer extends Component {
 
+  renderReviews = () => {
+    if (this.props.restaurant.reviews.length > 0) {
+      return <Reviews reviews={this.props.restaurant.reviews}/>
+    } else {
+      return null
+    }
+  }
+
   render() {
     return (
       <div>
         <ReviewInput addReview={this.props.addReview} restaurant={this.props.restaurant}/>
-        <Reviews reviews={this.props.restaurant.reviews}/>
+        {this.renderReviews()}
       </div>
     )
   }
