@@ -5,16 +5,15 @@ class Review extends Component {
   render() {
     const { review } = this.props
 
-    return (
-      <div>
-        <li>
-          {review.text}
-        </li>
-        <button> X </button>
-      </div>
-    );
+      return (
+        <div>
+          <li>
+            {review.text}
+          </li>
+          <button onClick={() => this.props.deleteReview(this.props.review.id)}> X </button>
+        </div>
+      )
+    }
   }
-
-};
 
 export default Review;
