@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 
 class Review extends Component {
+handleDelete = () => {
+
+  this.props.deleteReview(this.props.review.id)
+}
 
   render() {
-    const { review } = this.props
+    console.log("reviews render",this.props)
+    const text = this.props.review.text
 
     return (
-      <div>
-        <li>
-          {review.text}
+      <div> Reviews:
+         <li>
+          {text.text}
+          <button onClick={this.handleDelete}> X </button>
+          
         </li>
-        <button> X </button>
       </div>
     );
   }
