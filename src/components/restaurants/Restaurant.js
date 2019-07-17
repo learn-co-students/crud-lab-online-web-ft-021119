@@ -5,7 +5,6 @@ class Restaurant extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
-    
     this.props.deleteRestaurant(this.props.restaurant.id)
   }
 
