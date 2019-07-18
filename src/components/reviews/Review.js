@@ -11,7 +11,8 @@ handleDelete = () => {
     const text = this.props.review.text
 
     return (
-      <div> Reviews:
+      
+      <div> 
          <li>
           {text.text}
           <button onClick={this.handleDelete}> X </button>
